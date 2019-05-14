@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "9cda3f68-bbf2-4e6e-a76a-b81d8c5271f5",
+		"name": "IPFtask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllPosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMaxValueUserId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25bb002a-2f7f-4c4d-9d2a-ea7ac9a31d5b",
+						"exec": [
+							"let arr = pm.response.json()",
+							"let maxUserId = Math.max.apply(Math, arr.map(function(o) { return o.userId; }))",
+							"",
+							"console.log(maxUserId)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMaxValueId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "515f2e04-d563-4559-b8da-1e5bd272003a",
+						"exec": [
+							"let arr = pm.response.json()",
+							"let maxId = Math.max.apply(Math, arr.map(function(o) { return o.id; }))",
+							"console.log(maxId)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMaxIdValueForMaxUserIdValue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b1e76eb-2961-4004-b28c-cc3bb95facfe",
+						"exec": [
+							"let arr = pm.response.json()",
+							"let maxId = Math.max.apply(Math, arr.map(function(o) { return o.id; }))",
+							"console.log(maxId)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=10",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddingCommnetForPostNamed (GetMaxIdValueForMaxUserIdValue)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"userId\": 10,\n        \"id\": 100,\n        \"title\": \"at nam consequatur ea labore ea harum\",\n        \"body\": \"cupiditate quo est a modi nesciunt soluta\\nipsa voluptas error itaque dicta in\\nautem qui minus magnam et distinctio eum\\naccusamus ratione error aut\",\n        \"comment\": \"TESTING COMMENT, VALUE ADDED JUST FOR TEST\"\n    }"
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=10&id=100",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "10"
+						},
+						{
+							"key": "id",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
